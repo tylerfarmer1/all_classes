@@ -1,1 +1,1 @@
-pint('hi')
+print('hi')
