@@ -3,8 +3,9 @@ import requests
 import zipfile
 
 base_url = "https://github.com/tylerfarmer1/all_classes/raw/main/"
-lab_folders = ["AI-050", "DP-203", "PL-100", "PL-200", "PL-500"]
-disk_drive = r"E:\\"
+lab_folders = ["AI-050", "DP-900", "DP-100", "DP-203", "DP-300", "PL-900", "PL-100", "PL-200", "PL-400", "PL-500", "PL-7000"]
+lab_folders.sort()
+disk_drive = r"D:\\"
 
 # Function to ask a user which lab then want
 def make_choice():
@@ -88,9 +89,4 @@ def download_and_extract(choice):
 my_choice=make_choice()
 delete_existing(my_choice)
 download_and_extract(my_choice)
-
-
-
-
-
-
+print("\n\nAll Finished.\n")
