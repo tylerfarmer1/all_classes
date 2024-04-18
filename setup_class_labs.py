@@ -10,7 +10,7 @@ disk_drive = r"D:\\"
 # Function to ask a user which lab then want
 def make_choice():
     # Print the list with item numbers
-    print("Select an option:")
+    print("\n\n\nHere is a list of classes. Please enter the class number to retrieve: ")
     for index, folder in enumerate(lab_folders, 1):
         print(f"{index}: {folder}")
     
