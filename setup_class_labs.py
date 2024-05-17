@@ -3,7 +3,8 @@ import requests
 import zipfile
 
 base_url = "https://github.com/tylerfarmer1/all_classes/raw/main/"
-lab_folders = ["AI-050", "DP-900", "DP-100", "DP-203", "DP-300", "PL-900", "PL-100", "PL-200", "PL-400", "PL-500", "PL-7000"]
+#lab_folders = ["AI-050", "DP-900", "DP-100", "DP-203", "DP-300", "PL-900", "PL-100", "PL-200", "PL-400", "PL-500", "PL-7000"]
+lab_folders = ["PL-900", "PL-100", "PL-200", "PL-400", "PL-500", "PL-7000"]
 lab_folders.sort()
 disk_drive = r"D:\\"
 
