@@ -16,7 +16,7 @@ def make_choice():
         print(f"{index}: {folder}")
     
     # Ask for user input
-    choice = input("Enter the number corresponding to your choice: ")
+    choice = input("Enter the number corresponding to your class: ")
     
     # Check if the choice is valid
     if choice.isdigit() and 1 <= int(choice) <= len(lab_folders):
@@ -27,7 +27,7 @@ def make_choice():
 
 # function to delete the existing folder
 def delete_existing(choice):
-    print("\nStarting Deletion Process:")
+    #print("\nStarting Deletion Process:")
     folder_path = disk_drive + choice
     
     if os.path.exists(folder_path):
@@ -36,18 +36,22 @@ def delete_existing(choice):
                 try:
                     os.remove(os.path.join(root,name))
                 except Exception as e:
-                    print(f"This file failed to delete: {name} but continuing on.")
+                    #print(f"This file failed to delete: {name} but continuing on.")
+                    print("Continuing...")
             for name in dirs:
                 try:
                     os.rmdir(os.path.join(root, name))
                 except Exception as e:
-                    print(f"This folder failed to delete: {name} but continuing on.")
+                    #print(f"This folder failed to delete: {name} but continuing on.")
+                    print("Continuing...")
         try:
             os.remove(folder_path)
         except Exception as e:
-            print(f"Failed to delete root folder {folder_path} but continuing on.")
+            #print(f"Failed to delete root folder {folder_path} but continuing on.")
+            print("Continuing...")
     else:
-        print(f"Folder {folder_path} does not exist.  Continuing on.")
+        #print(f"Folder {folder_path} does not exist.  Continuing on.")
+        print("Continuing...")
 
 
 # Function to download and extract the zip file
