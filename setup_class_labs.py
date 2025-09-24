@@ -11,6 +11,7 @@ disk_drive = r"D:\\"
 # Function to ask a user which lab then want
 def make_choice():
     # Ask for user input
+    print("/n/n/n")
     choice = input("Type in the course number such as AI-900, PL-900, PL-7000, MS-4018, et cetera: ").strip().upper()
 
     print("You selected: " + choice)
@@ -91,4 +92,5 @@ my_choice=make_choice()
 delete_existing(my_choice)
 download_and_extract(my_choice)
 print("\n\nAll Finished.\n")
+
 
