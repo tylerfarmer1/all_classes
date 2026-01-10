@@ -3,9 +3,11 @@ import requests
 import zipfile
 
 base_url = "https://github.com/tylerfarmer1/all_classes/raw/main/"
-#lab_folders = ["AI-050", "DP-900", "DP-100", "DP-203", "DP-300", "PL-900", "PL-100", "PL-200", "PL-400", "PL-500", "PL-7000"]
-lab_folders = ["AI-900", "AI-3016", "AI-3026", "AI-3003", "AI-3004", "AI-3002", "MS-4018", "PL-200", "PL-400", "PL-500", "PL-7001","PL-7002","PL-7003", "PL-7008", "PL-900"]
-#lab_folders.sort()
+
+lab_folders = ["XYZ-123", "AI-900", "AI-3016", "AI-3026", "AI-3003", "AI-3004", "AI-3002", "MS-4018", "PL-200", "PL-400", "PL-500", "PL-7001","PL-7002","PL-7003", "PL-7008", "PL-900"]
+
+
+lab_folders.sort()
 disk_drive = r"D:\\"
 
 # Function to ask a user which lab then want
@@ -96,4 +98,5 @@ my_choice=make_choice()
 delete_existing(my_choice)
 download_and_extract(my_choice)
 print("\n\nAll Finished.\n")
+
 
