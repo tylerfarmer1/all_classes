@@ -8,13 +8,15 @@ lab_folders = ["XYZ-123", "AI-900", "AI-3016", "AI-3026", "AI-3003", "AI-3004", 
 
 
 lab_folders.sort()
-disk_drive = r"D:\\"
-#disk_drive = r"C:\\"
+#disk_drive = r"D:\\"
+disk_drive = r"C:\\"
+
 
 # Function to ask a user which lab then want
 def make_choice():
     # Print the list with item numbers
     # print("\n\nI am Here")
+    print("Using the ",disk_drive)
     print("\n\n\nHere is a list of classes. Please enter the class number to retrieve: ")
     for index, folder in enumerate(lab_folders, 1):
         print(f"{index}: {folder}")
@@ -99,6 +101,7 @@ my_choice=make_choice()
 delete_existing(my_choice)
 download_and_extract(my_choice)
 print("\n\nAll Finished.\n")
+
 
 
 
