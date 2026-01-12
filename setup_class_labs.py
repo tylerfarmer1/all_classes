@@ -8,7 +8,8 @@ lab_folders = ["XYZ-123", "AI-900", "AI-3016", "AI-3026", "AI-3003", "AI-3004", 
 
 
 lab_folders.sort()
-disk_drive = r"D:\\"
+#disk_drive = r"D:\\"
+disk_drive = r"C:\\"
 
 # Function to ask a user which lab then want
 def make_choice():
@@ -98,5 +99,6 @@ my_choice=make_choice()
 delete_existing(my_choice)
 download_and_extract(my_choice)
 print("\n\nAll Finished.\n")
+
 
 
