@@ -4,7 +4,7 @@ import zipfile
 
 base_url = "https://github.com/tylerfarmer1/all_classes/raw/main/"
 
-lab_folders = ["AI-900", "AI-3016", "AI-3026", "AI-3003", "AI-3004", "AI-3002", "MS-4018", "PL-200", "PL-400", "PL-500", "PL-7001","PL-7002","PL-7003", "PL-7008", "PL-900"]
+lab_folders = ["AI-901", "MS-4018", "AB-410", "AB-620", "PL-200", "PL-400", "PL-500", "PL-7001","PL-7002","PL-7003", "PL-7008", "PL-900"]
 
 
 lab_folders.sort()
