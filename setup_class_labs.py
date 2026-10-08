@@ -1,35 +1,48 @@
-import os, sys
+import os, sys, re
 import requests
 import zipfile
 
 base_url = "https://github.com/tylerfarmer1/all_classes/raw/main/"
 
-lab_folders = ["AI-901", "MS-4018", "AB-410", "AB-620", "PL-200", "PL-400", "PL-7001","PL-7002","PL-7003", "PL-7008", "PL-900"]
-
-
-lab_folders.sort()
 disk_drive = r"D:\\"
 #disk_drive = r"C:\\LabFiles\\"
 
 
-# Function to ask a user which lab then want
+# Check GitHub to see whether a zip file for this course exists
+def course_exists(course):
+    url = base_url + course + ".zip"
+    try:
+        response = requests.head(url, allow_redirects=True, timeout=30)
+        return response.status_code == 200
+    except requests.RequestException as e:
+        print(f"Could not reach GitHub ({e}). Check your internet connection.")
+        return False
+
+
+# Function to ask the student which course they want
 def make_choice():
-    # Print the list with item numbers
-    # print("\n\nI am Here")
-    print("Using the ",disk_drive)
-    print("\n\n\nHere is a list of classes. Please enter the class number to retrieve: ")
-    for index, folder in enumerate(lab_folders, 1):
-        print(f"{index}: {folder}")
-    
-    # Ask for user input
-    choice = input("Enter the number corresponding to your class: ")
-    
-    # Check if the choice is valid
-    if choice.isdigit() and 1 <= int(choice) <= len(lab_folders):
-        return(lab_folders[int(choice) - 1])
-    else:
-        print("No option selected, program terminated.")
-        sys.exit()
+    print("Using the ", disk_drive)
+    while True:
+        choice = input("\n\nEnter your course number (for example PL-900 or PL-7001), or press Enter to quit: ").strip()
+
+        # Blank input ends the program
+        if choice == "":
+            print("No course entered, program terminated.")
+            sys.exit()
+
+        # GitHub file names are case sensitive and the zip files are upper case
+        choice = choice.upper()
+
+        # Only allow letters, numbers and dashes (keeps the input safe to use as a file/folder name)
+        if not re.fullmatch(r"[A-Z0-9-]+", choice):
+            print(f"'{choice}' is not a valid course number. Please try again.")
+            continue
+
+        print(f"Searching GitHub for {choice}.zip ...")
+        if course_exists(choice):
+            return choice
+        print(f"Course {choice} was not found. Please check the course number and try again.")
+
 
 # function to delete the existing folder
 def delete_existing(choice):
